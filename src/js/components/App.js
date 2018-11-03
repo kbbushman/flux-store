@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AppActions from '../actions/app-actions';
 
 class App extends Component {
 	state = {
@@ -7,7 +8,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>React App</h1>
+				<h1 onClick={AppActions.addItem.bind(null, 'This is the item...')}>React Flux App</h1>
 			</div>
 		)
 	}
