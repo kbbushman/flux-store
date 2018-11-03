@@ -16,7 +16,7 @@ for (let i = 1; i < 9; i++) {
 	})
 }
 
-let cartItems = [];
+let _cartItems = [];
 
 const _removeItem = (item) => {
 	_cartItems.splice(_cartItems.findIndex(i => i === item), 1);
@@ -35,16 +35,17 @@ const _decreaseItem = item => {
 	}
 };
 
-const _addtem = item => {
-	const cartItem = _findCartItem(item);
+const _addItem = item => {
+	const cartItem = _findItem(item);
 	if (!cartItem) {
 		_cartItems.push(Object.assign({qty: 1}, item));
+		console.log('Cart Items = ', _cartItems)
 	} else {
-		_increaseItem(item);
+		_increaseItem(cartItem);
 	}
 };
 
-const cartTotal = (qty = 0, total = 0) => {
+const _cartTotal = (qty = 0, total = 0) => {
 	_cartItems.forEach(cartItem => {
 		qty += cartItem.qty;
 		total += cartItem.qty * cartItem.cost;
@@ -71,11 +72,11 @@ const AppStore = Object.assign(EventEmitter.prototype, {
 		});
 	},
 	getCartTotal() {
-		return _cartTotals;
+		return _cartTotal;
 	},
 	dispatcherIndex: register(function(action) {
 		switch(action.actionType) {
-			case AppConstants.Add_ITEM:
+			case AppConstants.ADD_ITEM:
 				_addItem(action.item);
 				break;
 			case AppConstants.REMOVE_ITEM:
