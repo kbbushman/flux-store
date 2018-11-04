@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppStore from '../stores/app-store';
 
-const StoreWatchMixin = (InnerComponent, stateCallback) => class extends Component {
+const StoreWatch = (InnerComponent, stateCallback) => class extends Component {
 	state = stateCallback(this.props);
 
 	componentWillMount() {
@@ -26,4 +26,4 @@ const StoreWatchMixin = (InnerComponent, stateCallback) => class extends Compone
 	}
 }
 
-export default StoreWatchMixin;
+export default StoreWatch;

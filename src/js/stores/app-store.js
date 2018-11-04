@@ -71,7 +71,7 @@ const AppStore = Object.assign(EventEmitter.prototype, {
 		});
 	},
 	getCartTotal() {
-		return _cartTotal;
+		return _cartTotal();
 	},
 	dispatcherIndex: register(function(action) {
 		switch(action.actionType) {
