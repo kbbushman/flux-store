@@ -6,7 +6,6 @@ import CartButton from '../cart/CartButton';
 import { Link } from 'react-router-dom';
 
 const getCatalogItem = (props) => {
-	console.log(props)
 	let item = AppStore.getCatalog().find(({id}) => id === props.match.params.item);
 	return {item};
 }
