@@ -8,6 +8,6 @@ const CartButton = props => {
 			{props.txt}
 		</button>
 	)
-}
+};
 
 export default CartButton;

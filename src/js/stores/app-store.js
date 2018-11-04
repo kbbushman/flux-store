@@ -23,7 +23,7 @@ const _removeItem = (item) => {
 };
 
 const _findItem = (item) => {
-	_cartItems.find(cartItem => cartItem.id === item.id);
+	return _cartItems.find(cartItem => cartItem.id === item.id);
 };
 
 const _increaseItem = item => item.qty++;
@@ -39,7 +39,6 @@ const _addItem = item => {
 	const cartItem = _findItem(item);
 	if (!cartItem) {
 		_cartItems.push(Object.assign({qty: 1}, item));
-		console.log('Cart Items = ', _cartItems)
 	} else {
 		_increaseItem(cartItem);
 	}
