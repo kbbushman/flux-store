@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AppStore from '../../stores/app-store';
 import CartItem from './CartItem';
 import StoreWatch from '../../hoc/StoreWatch';
+import { Link } from 'react-router-dom';
 
 const cartItems = () => {
 	return { items: AppStore.getCart() };
@@ -23,7 +24,7 @@ const Cart = props => {
 	return (
 		<div>
 			<h1>Cart</h1>
-			<table className="table table-hover table-responsive">
+			<table className="table table-hover">
 				<thead>
 					<tr>
 						<th></th>
@@ -43,6 +44,7 @@ const Cart = props => {
 					</tr>
 				</tfoot>
 			</table>
+			<Link to="/">Continue Shopping</Link>
 		</div>
 	)
 };
