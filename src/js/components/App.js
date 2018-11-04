@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppActions from '../actions/app-actions';
-import Catalog from './Catalog';
-import Cart from './Cart';
+import Catalog from './catalog/Catalog';
+import Cart from './cart/Cart';
 
 class App extends Component {
 	state = {

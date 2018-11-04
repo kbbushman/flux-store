@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AppStore from '../stores/app-store';
+import AppStore from '../../stores/app-store';
 import CatalogItem from './CatalogItem';
-import StoreWatch from '../hoc/StoreWatch';
+import StoreWatch from '../../hoc/StoreWatch';
 
 const getCatalog = () => {
 	return { items: AppStore.getCatalog() }
