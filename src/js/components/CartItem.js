@@ -21,6 +21,6 @@ const CartItem = props => {
 			<td>{ props.subtotal }</td>
 		</tr>
 	)
-}
+};
 
 export default CartItem;
